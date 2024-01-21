@@ -31,23 +31,33 @@ export default defineUserConfig({
 
   theme: defaultTheme({
     logo: '/logo.png',
-    navbar: [],
-    sidebar: 'auto',
-  }),
-})
-
-/*
-{
+    navbar: [
+      {
+        text: 'Home',
+        link: '/',
+      },
+      {
+        text: 'Auto Sidebar',
+        link: '/auto-sidebar/',
+      },
+      {
+        text: 'Custom Sidebar',
+        link: '/custom-sidebar/',
+      },
+    ],
+    sidebar: {
       '/': 'auto',
       '/auto-sidebar/': 'auto',
       '/custom-sidebar/': [
         {
-          text: 'Page 1',
+          text: 'custom-sidebar',
+          link: '/custom-sidebar/',
           children: [
-            '/custom-sidebar/page-one.md',
-            '/custom-sidebar/page-two.md',
+            { text: 'custom-child-1', link: '/custom-sidebar/custom-one' },
+            { text: 'custom-child-2', link: '/custom-sidebar/custom-two' },
           ],
         },
       ],
-    }
-    */
+    },
+  }),
+})
